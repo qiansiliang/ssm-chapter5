@@ -26,6 +26,6 @@
 
     <mappers>
         <package name="com.learn.ssm.chapter5.mapper"/>
-<!--        <package name="com.learn.ssm.chapter5.mapper2"/>-->
+        <package name="com.learn.ssm.chapter5.mapper2"/>
     </mappers>
 </configuration>

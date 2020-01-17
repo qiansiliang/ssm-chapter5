@@ -1,0 +1,13 @@
+CREATE
+	OR REPLACE PROCEDURE count_role ( p_role_name IN VARCHAR, count_total OUT INT, exec_date OUT date ) IS BEGIN
+SELECT
+	count( * ) INTO count_total
+FROM
+	t_role
+WHERE
+	role_name LIKE '%' || p_role_name || '%';
+SELECT
+	sysdate INTO exec_date
+FROM
+	DUAL;
+END;

@@ -4,6 +4,7 @@ import com.learn.ssm.chapter5.param.PageParams;
 import com.learn.ssm.chapter5.param.RoleParams;
 import com.learn.ssm.chapter5.pojo.Role;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.type.Alias;
 
 import java.util.List;
@@ -21,4 +22,12 @@ public interface RoleMapper {
     public List<Role> findRolesByBean(RoleParams roleParams);
 
     public List<Role> findRolesByMix(@Param("params") RoleParams roleParams, @Param("page")PageParams pageParams);
+
+    public List<Role> findRolesByRowBounds(@Param("roleName") String roleName, @Param("note") String note, RowBounds rowBounds);
+
+    public int insertRole(Role role);
+
+    public int updateRole(Role role);
+
+    public int deleteRole(Long id);
 }
